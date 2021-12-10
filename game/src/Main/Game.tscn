@@ -112,7 +112,6 @@ shape = SubResource( 3 )
 
 [node name="Camera2DIntro" type="Camera2D" parent="Intro"]
 position = Vector2( 160, -96 )
-current = true
 
 [node name="Pit_Entrance" type="Area2D" parent="Intro"]
 position = Vector2( 232, -26 )
@@ -132,6 +131,7 @@ tile_data = PoolIntArray( -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, 6, 0, 0, 13,
 
 [node name="Camera2D" type="Camera2D" parent="Level_1"]
 position = Vector2( 160, 88 )
+current = true
 
 [node name="BrokenFloorsLevel1" type="TileMap" parent="Level_1"]
 tile_set = SubResource( 6 )
@@ -164,7 +164,7 @@ position = Vector2( 160, 664 )
 position = Vector2( -160, 664 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 46, -28 )
+position = Vector2( 110, 158 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
