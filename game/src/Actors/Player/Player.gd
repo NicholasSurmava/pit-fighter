@@ -66,7 +66,7 @@ func shoot():
 		canShoot = false
 		$ReloadLabel.visible = true
 		$ReloadLabel.percent_visible = 1
-		yield(get_tree().create_timer(0.5), "timeout")
+		yield(get_tree().create_timer(0.7), "timeout")
 		shooting = false
 		canShoot = true
 		$ReloadLabel.visible = false

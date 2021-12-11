@@ -112,6 +112,7 @@ shape = SubResource( 3 )
 
 [node name="Camera2DIntro" type="Camera2D" parent="Intro"]
 position = Vector2( 160, -96 )
+current = true
 
 [node name="Pit_Entrance" type="Area2D" parent="Intro"]
 position = Vector2( 232, -26 )
@@ -131,7 +132,6 @@ tile_data = PoolIntArray( -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, 6, 0, 0, 13,
 
 [node name="Camera2D" type="Camera2D" parent="Level_1"]
 position = Vector2( 160, 88 )
-current = true
 
 [node name="BrokenFloorsLevel1" type="TileMap" parent="Level_1"]
 tile_set = SubResource( 6 )
@@ -139,8 +139,28 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 6, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0 )
 
-[node name="Enemy_1" parent="Level_1" instance=ExtResource( 6 )]
+[node name="Enemies" type="Node" parent="Level_1"]
+
+[node name="Enemy_1" parent="Level_1/Enemies" instance=ExtResource( 6 )]
 position = Vector2( 26, 156 )
+
+[node name="Enemy_2" parent="Level_1/Enemies" instance=ExtResource( 6 )]
+position = Vector2( 62, 155 )
+
+[node name="Enemy_3" parent="Level_1/Enemies" instance=ExtResource( 6 )]
+position = Vector2( 39, 78 )
+
+[node name="Enemy_5" parent="Level_1/Enemies" instance=ExtResource( 6 )]
+position = Vector2( 72, 78 )
+
+[node name="Enemy_6" parent="Level_1/Enemies" instance=ExtResource( 6 )]
+position = Vector2( 193, 48 )
+
+[node name="Enemy_7" parent="Level_1/Enemies" instance=ExtResource( 6 )]
+position = Vector2( 261, 46 )
+
+[node name="Enemy_4" parent="Level_1/Enemies" instance=ExtResource( 6 )]
+position = Vector2( 265, 112 )
 
 [node name="Level_2" type="Node" parent="."]
 
@@ -164,7 +184,7 @@ position = Vector2( 160, 664 )
 position = Vector2( -160, 664 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 110, 158 )
+position = Vector2( 33, -37 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
