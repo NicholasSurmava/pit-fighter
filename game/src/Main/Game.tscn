@@ -164,23 +164,29 @@ position = Vector2( 265, 112 )
 
 [node name="Level_2" type="Node" parent="."]
 
-[node name="Camera2D2" type="Camera2D" parent="Level_2"]
+[node name="Camera2D" type="Camera2D" parent="Level_2"]
 position = Vector2( 160, 280 )
+
+[node name="BrokenFloorsLevel2" type="TileMap" parent="Level_2"]
+tile_set = SubResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 6, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507333, 0, 0, 1507334, 0, 0, 1507335, 0, 0, 1507336, 0, 0, 1507337, 0, 0, 1507338, 0, 0, 1507339, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507342, 0, 0, 1507343, 0, 0, 1507344, 0, 0, 1507345, 0, 0, 1507346, 0, 0 )
 
 [node name="Level_3" type="Node" parent="."]
 
-[node name="Camera2D3" type="Camera2D" parent="Level_3"]
+[node name="Camera2D" type="Camera2D" parent="Level_3"]
 position = Vector2( 160, 472 )
 
-[node name="Camera2D3_2" type="Camera2D" parent="Level_3"]
+[node name="Camera2D_2" type="Camera2D" parent="Level_3"]
 position = Vector2( 480, 472 )
 
 [node name="Level_4" type="Node" parent="."]
 
-[node name="Camera2D4" type="Camera2D" parent="Level_4"]
+[node name="Camera2D" type="Camera2D" parent="Level_4"]
 position = Vector2( 160, 664 )
 
-[node name="Camera2D4_2" type="Camera2D" parent="Level_4"]
+[node name="Camera2D_2" type="Camera2D" parent="Level_4"]
 position = Vector2( -160, 664 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
