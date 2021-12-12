@@ -7,24 +7,24 @@ func _ready() -> void:
 	# The spawners can then grab and spawn until they hit the limit.
 	var enemies_per_level = random_enemy_generator(4)
 	Autoload.enemies_per_level = enemies_per_level
-	print(get_enemy_count("Level_1"))
+#	print(get_enemy_count("Level_1"))
 	
 	return
 
 func _process(delta):
 	# Get the current level based on the active camera.
-	$CanvasLayer/Score.text = str(Autoload.SCORE_SYSTEM)
-	$CanvasLayer/Score.text = "Enemies Left: " + str(get_enemy_count("Level_1"))
+	$HUD/Score.text = str(Autoload.SCORE_SYSTEM)
+#	$CanvasLayer/Score.text = "Enemies Left: " + str(get_enemy_count("Level_1"))
 	
-	if get_enemy_count("Level_1") == 0:
-		$CanvasLayer/Score.text = "Level 1 complete"
-		var BROKEN_FLOOR = $"Level_1/BrokenFloorsLevel1"
-		var LEVEL_2_CAMERA = $Level_2/Camera2D2
-		
-		BROKEN_FLOOR.visible = false
-		BROKEN_FLOOR.collision_layer = 0
-		BROKEN_FLOOR.collision_mask = 0
-		LEVEL_2_CAMERA.current = true
+#	if get_enemy_count("Level_1") == 0:
+#		$CanvasLayer/Score.text = "Level 1 complete"
+#		var BROKEN_FLOOR = $"Level_1/BrokenFloorsLevel1"
+#		var LEVEL_2_CAMERA = $Level_2/Camera2D2
+#
+#		BROKEN_FLOOR.visible = false
+#		BROKEN_FLOOR.collision_layer = 0
+#		BROKEN_FLOOR.collision_mask = 0
+#		LEVEL_2_CAMERA.current = true
 
 func random_enemy_generator(levels):
 	# Takes in the number of levels and generators an int based on the number of levels passed in.
@@ -37,5 +37,5 @@ func random_enemy_generator(levels):
 		
 	return enemies_to_generate
 
-func get_enemy_count(level):
-	return get_node(level).get_node("Enemies").get_child_count()
+#func get_enemy_count(level):
+#	return get_node(level).get_node("Enemies").get_child_count()
