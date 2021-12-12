@@ -9,5 +9,7 @@ func _ready() -> void:
 	print(level_name)
 	var player = PLAYER_PATH.instance()
 	add_child(player)
-	player.global_position = Vector2(50, 0)
+	player.global_position = Vector2(250, 0)
 	
+func _process(delta) -> void:
+	$Label.text = "Enemies: "
