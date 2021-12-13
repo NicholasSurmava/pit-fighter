@@ -19,8 +19,9 @@ func _ready():
 func _on_Player_deleter_body_entered(body):
 	if body.name == "Player":
 		body.queue_free()
-		yield(get_tree().create_timer(1), "timeout")
-		get_parent().get_parent().get_node("HUD/Title").visible = true
-		yield(get_tree().create_timer(3), "timeout")
+		yield(get_tree().create_timer(0.5), "timeout")
+		get_parent().get_parent().get_node("Title").visible = true
+		get_parent().get_parent().get_node("Title_Background").visible = true
+		yield(get_tree().create_timer(4), "timeout")
 		print("Change level")
 		get_tree().change_scene("res://src/Levels/Level_1.tscn")

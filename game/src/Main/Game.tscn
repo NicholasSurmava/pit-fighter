@@ -43,7 +43,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 92, 10 )
 
-[node name="Game" type="Node"]
+[node name="Level" type="Node"]
 script = ExtResource( 7 )
 
 [node name="MapTiles" type="TileMap" parent="."]
@@ -52,7 +52,7 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -786413, 0, 0, -720877, 0, 0, -655341, 0, 0, -589805, 0, 0, -524269, 0, 0, -458733, 0, 0, -393197, 0, 0, -327661, 0, 0, -262125, 0, 0, -196596, 0, 0, -196592, 0, 0, -196589, 0, 0, -131060, 0, 0, -131056, 0, 0, -131053, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0 )
+tile_data = PoolIntArray( -720897, 0, 0, -786413, 0, 0, -655361, 0, 0, -720877, 0, 0, -589825, 0, 0, -655341, 0, 0, -524289, 0, 0, -589805, 0, 0, -458753, 0, 0, -524269, 0, 0, -393217, 0, 0, -458733, 0, 0, -327681, 0, 0, -393197, 0, 0, -262145, 0, 0, -327661, 0, 0, -196609, 0, 0, -262125, 0, 0, -131073, 0, 0, -196596, 0, 0, -196592, 0, 0, -196589, 0, 0, -65537, 0, 0, -131060, 0, 0, -131056, 0, 0, -131053, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0 )
 
 [node name="Intro" type="Node" parent="."]
 
@@ -73,6 +73,17 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Intro/IntroChar"]
 position = Vector2( -1, 6 )
 shape = SubResource( 3 )
+
+[node name="Dialogue" type="Label" parent="Intro/IntroChar"]
+visible = false
+margin_left = -163.0
+margin_top = -40.0
+margin_right = 130.0
+margin_bottom = -26.0
+text = "Why hello traveller. Enough talk! Enter the pit!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Pit_Entrance" type="Area2D" parent="Intro"]
 position = Vector2( 232, 154 )
@@ -100,20 +111,16 @@ shape = SubResource( 7 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 33, 143 )
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="Score" type="Label" parent="HUD"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -20.0
-margin_right = 20.0
-margin_bottom = 14.0
-text = "SCORE"
+[node name="Title_Background" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="HUD"]
+[node name="Title" type="Label" parent="."]
 visible = false
 margin_left = 134.0
 margin_top = 57.0

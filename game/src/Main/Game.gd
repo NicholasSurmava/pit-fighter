@@ -11,28 +11,13 @@ func _ready() -> void:
 	
 	return
 
-func _process(delta):
-	# Get the current level based on the active camera.
-	$HUD/Score.text = str(Autoload.SCORE_SYSTEM)
-#	$CanvasLayer/Score.text = "Enemies Left: " + str(get_enemy_count("Level_1"))
-	
-#	if get_enemy_count("Level_1") == 0:
-#		$CanvasLayer/Score.text = "Level 1 complete"
-#		var BROKEN_FLOOR = $"Level_1/BrokenFloorsLevel1"
-#		var LEVEL_2_CAMERA = $Level_2/Camera2D2
-#
-#		BROKEN_FLOOR.visible = false
-#		BROKEN_FLOOR.collision_layer = 0
-#		BROKEN_FLOOR.collision_mask = 0
-#		LEVEL_2_CAMERA.current = true
-
 func random_enemy_generator(levels):
 	# Takes in the number of levels and generators an int based on the number of levels passed in.
 	var enemies_to_generate = {}
 	
 	for level in levels:
 		randomize()
-		var number_of_enemies = randi() % 10 + 5
+		var number_of_enemies = randi() % 40 + 2
 		enemies_to_generate["level_" + str(level + 1)] = number_of_enemies
 		
 	return enemies_to_generate

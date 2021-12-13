@@ -21,3 +21,11 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 8, 12 )
 shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_right = 56.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

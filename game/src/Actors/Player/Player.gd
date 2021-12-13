@@ -60,7 +60,7 @@ func shoot():
 	if Input.is_action_just_pressed("shoot") and canShoot == true:
 		var bullet = BULLET_PATH.instance()
 		print(get_tree().root)
-		get_tree().root.add_child(bullet)
+		get_tree().root.get_node('Level').add_child(bullet)
 		bullet.global_position = self.global_position
 		bullet.direction.x = FACING
 		shooting = true
