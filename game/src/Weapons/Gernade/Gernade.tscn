@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Weapons/Gernade/Gernade.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 44.1814
+
+[node name="Gernade" type="RigidBody2D"]
+collision_mask = 14
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 6.0
+margin_bottom = 6.0
+color = Color( 1, 0.298039, 0.298039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3, 3 )
+shape = SubResource( 1 )
+
+[node name="BombRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombRadius"]
+position = Vector2( 3, 3 )
+shape = SubResource( 2 )
+
+[node name="boom" type="Polygon2D" parent="BombRadius"]
+visible = false
+color = Color( 0.870588, 0.568627, 0.0941176, 1 )
+polygon = PoolVector2Array( -25, -30, -15, -37, -1, -40, 11, -40, 28, -33, 38, -21, 43, -8, 44, 2, 38, 16, 26, 37, 0, 43, -24, 39, -34, 32, -34, 13, -35, 3, -37, -6, -29, -18, -27, -28 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="body_entered" from="BombRadius" to="." method="_on_BombRadius_body_entered"]
+[connection signal="body_exited" from="BombRadius" to="." method="_on_BombRadius_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

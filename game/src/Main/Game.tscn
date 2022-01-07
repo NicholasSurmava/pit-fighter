@@ -1,20 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Actors/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/tiles.tres" type="TileSet" id=2]
-[ext_resource path="res://src/Main/Area2D.gd" type="Script" id=3]
+[ext_resource path="res://src/Font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://src/Main/Pit_Entrance.gd" type="Script" id=4]
 [ext_resource path="res://assets/Tileset/DARK Edition Tileset No background.png" type="Texture" id=5]
-[ext_resource path="res://src/Main/Player_deleter.gd" type="Script" id=6]
+[ext_resource path="res://src/Utils/Player_deleter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Main/Game.gd" type="Script" id=7]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 17.5, 18.25 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 24, 8 )
-
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="TileSet" id=6]
@@ -28,23 +22,38 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 5 )
+0/shape = SubResource( 7 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 92, 10 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 24, 8 )
 
 [node name="Level" type="Node"]
 script = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.5
+margin_top = -8.0
+margin_right = 38.5
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 3 )
+text = "The Pit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MapTiles" type="TileMap" parent="."]
 position = Vector2( 0, 180 )
@@ -52,85 +61,27 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -720897, 0, 0, -786413, 0, 0, -655361, 0, 0, -720877, 0, 0, -589825, 0, 0, -655341, 0, 0, -524289, 0, 0, -589805, 0, 0, -458753, 0, 0, -524269, 0, 0, -393217, 0, 0, -458733, 0, 0, -327681, 0, 0, -393197, 0, 0, -262145, 0, 0, -327661, 0, 0, -196609, 0, 0, -262125, 0, 0, -131073, 0, 0, -196596, 0, 0, -196592, 0, 0, -196589, 0, 0, -65537, 0, 0, -131060, 0, 0, -131056, 0, 0, -131053, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0 )
+tile_data = PoolIntArray( -720897, 0, 0, -786413, 0, 0, -655361, 0, 0, -720877, 0, 0, -589825, 0, 0, -655341, 0, 0, -524289, 0, 0, -589805, 0, 0, -458753, 0, 0, -524269, 0, 0, -393217, 0, 0, -458733, 0, 0, -327681, 0, 0, -393197, 0, 0, -262145, 0, 0, -327661, 0, 0, -196609, 0, 0, -262125, 0, 0, -131073, 0, 0, -196596, 0, 0, -196592, 0, 0, -196589, 0, 0, -65537, 0, 0, -131060, 0, 0, -131056, 0, 0, -131053, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, 8, 0, 0, 20, 0, 0, 65544, 0, 0, 65556, 0, 0, 131080, 0, 0, 131092, 0, 0, 196616, 0, 0, 196628, 0, 0, 262152, 0, 0, 262164, 0, 0, 327688, 0, 0, 327700, 0, 0, 393224, 0, 0, 393236, 0, 0, 458760, 0, 0, 458772, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0 )
 
-[node name="Intro" type="Node" parent="."]
-
-[node name="IntroChar" type="Area2D" parent="Intro"]
-position = Vector2( 168, 140 )
-script = ExtResource( 3 )
-
-[node name="ColorRect" type="ColorRect" parent="Intro/IntroChar"]
-margin_left = -18.0
-margin_top = -12.0
-margin_right = 17.0
-margin_bottom = 24.0
-color = Color( 0.215686, 0.207843, 0.207843, 1 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Intro/IntroChar"]
-position = Vector2( -1, 6 )
-shape = SubResource( 3 )
-
-[node name="Dialogue" type="Label" parent="Intro/IntroChar"]
-visible = false
-margin_left = -163.0
-margin_top = -40.0
-margin_right = 130.0
-margin_bottom = -26.0
-text = "Why hello traveller. Enough talk! Enter the pit!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Pit_Entrance" type="Area2D" parent="Intro"]
-position = Vector2( 232, 154 )
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Intro/Pit_Entrance"]
-position = Vector2( 0, 2 )
-shape = SubResource( 4 )
-
-[node name="BrokenFloorsIntro" type="TileMap" parent="Intro"]
+[node name="BrokenFloorsIntro" type="TileMap" parent="."]
 position = Vector2( 0, 180 )
 tile_set = SubResource( 6 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -65523, 0, 0, -65522, 0, 0, -65521, 0, 0 )
 
-[node name="Player_deleter" type="Area2D" parent="Intro"]
-position = Vector2( 228, 224 )
-script = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Intro/Player_deleter"]
-position = Vector2( 5, -1 )
-shape = SubResource( 7 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 33, 143 )
 
-[node name="Title_Background" type="ColorRect" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Pit_Entrance" type="Area2D" parent="."]
+position = Vector2( 232, 154 )
+script = ExtResource( 4 )
 
-[node name="Title" type="Label" parent="."]
-visible = false
-margin_left = 134.0
-margin_top = 57.0
-margin_right = 178.0
-margin_bottom = 71.0
-text = "The Pit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pit_Entrance"]
+position = Vector2( 0, 2 )
+shape = SubResource( 4 )
 
-[connection signal="body_entered" from="Intro/IntroChar" to="Intro/IntroChar" method="_on_IntroChar_body_entered"]
-[connection signal="body_entered" from="Intro/Pit_Entrance" to="Intro/Pit_Entrance" method="_on_Pit_Entrance_body_entered"]
-[connection signal="body_entered" from="Intro/Player_deleter" to="Intro/Player_deleter" method="_on_Player_deleter_body_entered"]
+[node name="Player_deleter" parent="." instance=ExtResource( 6 )]
+LEVEL_GOTO = "res://src/Levels/Level_1/Level_1.tscn"
+
+[connection signal="body_entered" from="Pit_Entrance" to="Pit_Entrance" method="_on_Pit_Entrance_body_entered"]

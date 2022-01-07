@@ -3,6 +3,8 @@ extends KinematicBody2D
 var velocity : Vector2 = Vector2.ZERO
 var direction : Vector2 = Vector2.ZERO
 
+signal hit
+
 func _physics_process(delta):
 	velocity.x = direction.x * 500
 	
@@ -18,6 +20,13 @@ func _physics_process(delta):
 			self.queue_free()
 			collider.queue_free()
 			Autoload.SCORE_SYSTEM += 10
+			
+		if collider.is_in_group("spawner"):
+			print(collider)
+			self.connect("hit", collider, "on_Bullet_hit")
+			emit_signal("hit")
+			self.queue_free()
+			Autoload.SCORE_SYSTEM += 20
 			
 		
 

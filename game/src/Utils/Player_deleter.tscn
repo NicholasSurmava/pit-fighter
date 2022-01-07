@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Main/Player_deleter.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 280, 10 )
+
+[node name="Player_deleter" type="Area2D"]
+position = Vector2( 228, 224 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -97, -1 )
+shape = SubResource( 7 )
+
+[connection signal="body_entered" from="." to="." method="_on_Player_deleter_body_entered"]

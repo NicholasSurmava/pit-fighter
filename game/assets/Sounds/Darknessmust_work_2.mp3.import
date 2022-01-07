@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Darknessmust_work_2.mp3-c77ab6fd5e891d74601a716ecc031a5a.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Darknessmust_work_2.mp3"
+dest_files=[ "res://.import/Darknessmust_work_2.mp3-c77ab6fd5e891d74601a716ecc031a5a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
